@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 
 import java.util.ArrayList;
@@ -26,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
         mainActivity = this;
 
+        // array list of the available music genres
         ArrayList<Genre> genres = new ArrayList<>();
-
         genres.add(new Genre(R.drawable.country_genre_mod,getString(R.string.country_genre),5));
         genres.add(new Genre(R.drawable.classic_genre_mod,getString(R.string.classical_genre),5));
         genres.add(new Genre(R.drawable.hip_hop_genre_mod,getString(R.string.hip_hop_genre),4));
@@ -37,9 +39,11 @@ public class MainActivity extends AppCompatActivity {
         genres.add(new Genre(R.drawable.rock_genre_mod,getString(R.string.rock_genre),6));
         genres.add(new Genre(R.drawable.soul_genre_mod,getString(R.string.soul_genre),4));
 
+        // defining grid view content
         GridView gridView = (GridView) findViewById(R.id.music_genre_grid);
         gridView.setAdapter(new GenreAdapter(this,genres));
 
+        // defining grid view click listener
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id){
@@ -81,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
 
     }
 }

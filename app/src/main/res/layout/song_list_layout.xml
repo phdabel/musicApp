@@ -58,20 +58,12 @@
             android:orientation="horizontal"
             android:gravity="center">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rewing"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Play"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Forward"/>
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:background="@drawable/buttons"
+                android:id="@+id/player_buttons"
+                />
 
         </LinearLayout>
 
