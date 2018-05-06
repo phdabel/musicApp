@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">MusicApp</string>
+    <string name="now_playing_toast">You are now playing</string>
+    <string name="country_genre">Country</string>
+    <string name="classical_genre">Classical</string>
+    <string name="hip_hop_genre">Hip Hop</string>
+    <string name="indie_genre">Indie</string>
+    <string name="pop_genre">Pop</string>
+    <string name="reggae_genre">Reggae</string>
+    <string name="rock_genre">Rock</string>
+    <string name="soul_genre">Soul</string>
+    <string name="song_label">song</string>
+    <string name="songs_label">songs</string>
+    <string name="playing_now_label">Playing Now</string>
 </resources>

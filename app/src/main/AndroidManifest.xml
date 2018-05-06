@@ -26,7 +26,7 @@
         </activity>
         <activity
             android:name=".activities.ClassicActivity"
-            android:label="Country"
+            android:label="Classical"
             android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -34,7 +34,7 @@
         </activity>
         <activity
             android:name=".activities.HipHopActivity"
-            android:label="Country"
+            android:label="Hip Hop"
             android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -42,7 +42,7 @@
         </activity>
         <activity
             android:name=".activities.IndieActivity"
-            android:label="Country"
+            android:label="Indie"
             android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -50,7 +50,7 @@
         </activity>
         <activity
             android:name=".activities.PopActivity"
-            android:label="Country"
+            android:label="Pop"
             android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -58,7 +58,7 @@
         </activity>
         <activity
             android:name=".activities.ReggaeActivity"
-            android:label="Country"
+            android:label="Reggae"
             android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -74,7 +74,7 @@
         </activity>
         <activity
             android:name=".activities.SoulActivity"
-            android:label="Country"
+            android:label="Soul"
             android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:gravity="center"
+    style="@style/GenreItemLayout"
     android:id="@+id/genre_item">
 
     <ImageView
@@ -17,14 +17,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/item_name"
-        android:gravity="center"
+        style="@style/GenreItemName"
         tools:text="Country" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/item_total_songs"
-        android:gravity="center"
+        style="@style/GenreItemAmount"
         tools:text="10 songs" />
 
 </LinearLayout>

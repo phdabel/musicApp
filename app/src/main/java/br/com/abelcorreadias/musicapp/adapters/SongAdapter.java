@@ -5,7 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -21,7 +24,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent){
+    public View getView(int position, final View convertView, final ViewGroup parent){
 
         // Check if the existing view is beign reused, otherwise inflate the view
         View listItemView = convertView;
@@ -32,14 +35,29 @@ public class SongAdapter extends ArrayAdapter<Song> {
         // Get the {@link Song} object located at this position in the list
         Song currentSong = getItem(position);
 
-        TextView songNameTextView = (TextView) listItemView.findViewById(R.id.song_name);
+        final TextView songNameTextView = (TextView) listItemView.findViewById(R.id.song_name);
         songNameTextView.setText(currentSong.getName());
 
-        TextView songArtistTextView = (TextView) listItemView.findViewById(R.id.artist_name);
+        final TextView songArtistTextView = (TextView) listItemView.findViewById(R.id.artist_name);
         songArtistTextView.setText(currentSong.getArtist());
 
-        return listItemView;
+        listItemView.setOnClickListener(new View.OnClickListener(){
+            public void onClick(final View v){
 
+                Toast.makeText(getContext(),getContext().getString(R.string.now_playing_toast)+" "+songNameTextView.getText(),Toast.LENGTH_SHORT).show();
+
+                ListView lv = (ListView)v.getParent();
+                LinearLayout ll = (LinearLayout) lv.getParent();
+
+                TextView playingSong = (TextView)ll.findViewById(R.id.playing_now_song);
+                playingSong.setText(songNameTextView.getText());
+
+                TextView playingArtist = (TextView)ll.findViewById(R.id.playing_now_artist);
+                playingArtist.setText(songArtistTextView.getText());
+
+            }
+        });
+        return listItemView;
     }
 
 }

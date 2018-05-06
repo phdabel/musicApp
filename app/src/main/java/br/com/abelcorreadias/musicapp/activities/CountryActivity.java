@@ -2,6 +2,9 @@ package br.com.abelcorreadias.musicapp.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -14,6 +17,7 @@ import br.com.abelcorreadias.musicapp.models.Song;
 
 public class CountryActivity extends AppCompatActivity {
 
+    private static final String LOG_TAG = CountryActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -31,12 +35,11 @@ public class CountryActivity extends AppCompatActivity {
         image.setBackgroundResource(R.drawable.country_genre_mod);
 
         TextView genreLabel = (TextView) findViewById(R.id.song_list_name);
-        genreLabel.setText("Country");
+        genreLabel.setText(getString(R.string.country_genre));
 
         SongAdapter adapter = new SongAdapter(this, songs);
         ListView listView = (ListView) findViewById(R.id.song_list);
         listView.setAdapter(adapter);
-
 
     }
 

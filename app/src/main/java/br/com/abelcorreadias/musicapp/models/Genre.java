@@ -1,5 +1,9 @@
 package br.com.abelcorreadias.musicapp.models;
 
+import br.com.abelcorreadias.musicapp.R;
+import br.com.abelcorreadias.musicapp.activities.MainActivity;
+
+
 public class Genre {
 
     /**
@@ -42,9 +46,9 @@ public class Genre {
      */
     public String getNumberOfSongs(){
         if(this.numberOfSongs <= 1){
-            return new Integer(this.numberOfSongs).toString()+" song";
+            return new Integer(this.numberOfSongs).toString()+" "+MainActivity.mainActivity.getString(R.string.song_label);
         }else{
-            return new Integer(this.numberOfSongs).toString()+" songs";
+            return new Integer(this.numberOfSongs).toString()+" "+MainActivity.mainActivity.getString(R.string.songs_label);
         }
 
     }

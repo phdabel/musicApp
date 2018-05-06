@@ -5,7 +5,72 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimaryLight</item>
+    </style>
+
+    <!-- Style of the main activity's linear layout -->
+    <style name="MainScreenLayout">
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- Style of the main activity's title -->
+    <style name="TitleMainScreen">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Style of the genre layout -->
+    <style name="GenreItemLayout">
+        <item name="android:gravity">center</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <!-- Style of the name text view of the genre item -->
+    <style name="GenreItemName" parent="GenreItemLayout">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <!-- Style of the amount text view of the genre item -->
+    <style name="GenreItemAmount" parent="GenreItemName">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- Style of the song list root layout -->
+    <style name="SongListLayout">
+        <item name="android:gravity">center</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- Style of the playing now label -->
+    <style name="PlayingNowLabel">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- Style of the playing now songs -->
+    <style name="PlayingNowSongInfo" parent="PlayingNowLabel">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- Style of the songs items -->
+    <style name="SongsList">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingLeft">10dp</item>
+
     </style>
 
 </resources>
