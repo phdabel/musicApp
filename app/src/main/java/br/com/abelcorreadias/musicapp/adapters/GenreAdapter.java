@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,7 +11,6 @@ import java.util.ArrayList;
 
 import br.com.abelcorreadias.musicapp.R;
 import br.com.abelcorreadias.musicapp.models.Genre;
-import br.com.abelcorreadias.musicapp.models.Song;
 
 public class GenreAdapter extends ArrayAdapter<Genre> {
 
@@ -41,13 +39,13 @@ public class GenreAdapter extends ArrayAdapter<Genre> {
         // Get the {@link Genre} object located at this position in the list
         Genre currentGenre = getItem(position);
 
-        ImageView itemImage = (ImageView) itemGridView.findViewById(R.id.item_image);
+        ImageView itemImage = (ImageView) itemGridView.findViewById(R.id.item_image_view);
         itemImage.setImageResource(currentGenre.getImageResource());
 
-        TextView itemName = (TextView) itemGridView.findViewById(R.id.item_name);
+        TextView itemName = (TextView) itemGridView.findViewById(R.id.item_name_text_view);
         itemName.setText(currentGenre.getGenreName());
 
-        TextView itemTotalSongs = (TextView) itemGridView.findViewById(R.id.item_total_songs);
+        TextView itemTotalSongs = (TextView) itemGridView.findViewById(R.id.item_total_songs_text_view);
         itemTotalSongs.setText(currentGenre.getNumberOfSongs());
 
         return itemGridView;

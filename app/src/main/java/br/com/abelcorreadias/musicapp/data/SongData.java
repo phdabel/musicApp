@@ -1,6 +1,8 @@
-package br.com.abelcorreadias.musicapp.models;
+package br.com.abelcorreadias.musicapp.data;
 
-public class Song {
+import java.io.Serializable;
+
+public class SongData implements Serializable {
 
     /**
      * Variables for name and artist/band
@@ -13,7 +15,7 @@ public class Song {
      * @param name
      * @param artist
      */
-    public Song(String name, String artist){
+    public SongData(String name, String artist){
         this.name = name;
         this.artist = artist;
     }
@@ -34,6 +36,5 @@ public class Song {
     public String getArtist(){
         return this.artist;
     }
-
 
 }

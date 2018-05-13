@@ -13,13 +13,13 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import br.com.abelcorreadias.musicapp.R;
-import br.com.abelcorreadias.musicapp.models.Song;
+import br.com.abelcorreadias.musicapp.data.SongData;
 
-public class SongAdapter extends ArrayAdapter<Song> {
+public class SongAdapter extends ArrayAdapter<SongData> {
 
     private static final String LOG_TAG = SongAdapter.class.getSimpleName();
 
-    public SongAdapter(Activity context, ArrayList<Song> songs){
+    public SongAdapter(Activity context, ArrayList<SongData> songs){
         super(context,0,songs);
     }
 
@@ -32,13 +32,13 @@ public class SongAdapter extends ArrayAdapter<Song> {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.song_list_item, parent, false);
         }
 
-        // Get the {@link Song} object located at this position in the list
-        Song currentSong = getItem(position);
+        // Get the {@link SongData} object located at this position in the list
+        SongData currentSong = getItem(position);
 
-        final TextView songNameTextView = (TextView) listItemView.findViewById(R.id.song_name);
+        final TextView songNameTextView = (TextView) listItemView.findViewById(R.id.song_name_text_view);
         songNameTextView.setText(currentSong.getName());
 
-        final TextView songArtistTextView = (TextView) listItemView.findViewById(R.id.artist_name);
+        final TextView songArtistTextView = (TextView) listItemView.findViewById(R.id.artist_name_text_view);
         songArtistTextView.setText(currentSong.getArtist());
 
         listItemView.setOnClickListener(new View.OnClickListener(){
@@ -49,10 +49,10 @@ public class SongAdapter extends ArrayAdapter<Song> {
                 ListView lv = (ListView)v.getParent();
                 LinearLayout ll = (LinearLayout) lv.getParent();
 
-                TextView playingSong = (TextView)ll.findViewById(R.id.playing_now_song);
+                TextView playingSong = (TextView)ll.findViewById(R.id.playing_now_song_text_view);
                 playingSong.setText(songNameTextView.getText());
 
-                TextView playingArtist = (TextView)ll.findViewById(R.id.playing_now_artist);
+                TextView playingArtist = (TextView)ll.findViewById(R.id.playing_now_artist_text_view);
                 playingArtist.setText(songArtistTextView.getText());
 
             }

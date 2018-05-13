@@ -1,10 +1,10 @@
 package br.com.abelcorreadias.musicapp.models;
 
+import android.content.Context;
 import br.com.abelcorreadias.musicapp.R;
-import br.com.abelcorreadias.musicapp.activities.MainActivity;
 
 
-public class Genre {
+public class Genre extends BaseModel {
 
     /**
      *  Variables for:
@@ -20,14 +20,29 @@ public class Genre {
     /**
      * Constructor
      *
+     * @param context context variable
      * @param resourceImage int related with the image resource
      * @param name name of the genre
      * @param numberOfSongs  total of songs for the genre
      */
-    public Genre(int resourceImage, String name, int numberOfSongs){
+    public Genre(Context context, int resourceImage, String name, int numberOfSongs){
+        super(context);
         this.imageResource = resourceImage;
         this.name = name;
         this.numberOfSongs = numberOfSongs;
+    }
+
+    /**
+     * Constructor
+     *
+     * @param context
+     * @param resourceImage
+     * @param name
+     */
+    public Genre(Context context, int resourceImage, String name){
+        super(context);
+        this.imageResource = resourceImage;
+        this.name = name;
     }
 
     /**
@@ -46,9 +61,9 @@ public class Genre {
      */
     public String getNumberOfSongs(){
         if(this.numberOfSongs <= 1){
-            return new Integer(this.numberOfSongs).toString()+" "+MainActivity.mainActivity.getString(R.string.song_label);
+            return new Integer(this.numberOfSongs).toString()+" "+this.getContext().getString(R.string.song_label);
         }else{
-            return new Integer(this.numberOfSongs).toString()+" "+MainActivity.mainActivity.getString(R.string.songs_label);
+            return new Integer(this.numberOfSongs).toString()+" "+this.getContext().getString(R.string.songs_label);
         }
 
     }
